@@ -10,3 +10,8 @@ def main_page(request):
 
 def posts(request):
     return HttpResponse('Все посты блога')
+
+
+def get_info_about_post(request, post_name):
+    return HttpResponse(f'Информация о посте {post_name}')
+
