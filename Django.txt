@@ -1,0 +1,88 @@
+
+1) ВВЕДЕНИЕ
+
+# Установка пакета Django:
+
+pip install django
+
+# Проверка работоспособности Django:
+
+django-admin
+
+После ввода этой команды должно быть выведено:
+
+Type 'django-admin help <subcommand>' for help on a specific subcommand.
+
+Available subcommands:
+
+[django]
+    check
+    compilemessages
+    createcachetable
+    dbshell
+    diffsettings
+    dumpdata
+    flush
+    inspectdb
+    loaddata
+    makemessages
+    makemigrations
+    migrate
+    runserver
+    sendtestemail
+    shell
+    showmigrations
+    sqlflush
+    sqlmigrate
+    sqlsequencereset
+    squashmigrations
+    startapp
+    startproject
+    test
+    testserver
+Note that only Django core commands are listed as settings are not properly configured (error: Requested setting INSTALLED_APPS, but settings are not configured. You must either define the environment variable DJANGO_SETTINGS_MODULE or call settings.configure() before accessing settings.).
+
+# Создание проекта (создается папка с названием project_name, в которой 5 файлов и файл manage.py):
+
+django-admin startproject project_name
+
+# Про 5 файлов в созданной папке:
+
+manage.py - файл для взаимодействия с проектом через командную строку (execute_from_command_line)
+__init__,py - указатель того, что папка является пакетным модулем и ее содержимое можно импортировать
+settings.py - файл с настройками проекта
+urls.py - файл для регистрации новых страничек на сайте
+asgi.py - файл для разворачивания проекта на хосте
+wsgi.py - файл для разворачивания проекта на хосте
+
+# Про manage.py:
+
+Команда manage.py - это то же самое, что и команда django-admin, но с дополнительным функционалом
+
+# Запуск локального сервера (из директории в которой расположены папка project_name и manage.py):
+
+python3 manage.py runserver
+
+После ввода этой команды запускается локальный сервер и прослушивает адрес http://127.0.0.1:8000/ на наличие новых запросов
+
+# Создание приложения (создается новый пакет app_name в папке проекта в одной плоскости с project_name и manage.py):
+
+python3 manage.py startapp app_name
+
+# Про содержимое папки app_name:
+
+migrations - 
+models.py - 
+admin.py - файл для работы с админкой
+apps.py - в этом файле лежит название приложения, которое необходимо подключить в разделе
+	INSTALLED_APPS в файле settings.py (дописать в список)
+tests.py - тестирование
+views.py - логика приложения
+
+
+
+
+
+
+
+
